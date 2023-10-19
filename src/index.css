@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bayon&family=Bruno+Ace+SC&family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bayon&family=Bruno+Ace&family=Bruno+Ace+SC&family=Titillium+Web&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,5 +13,56 @@
         --bg-dark:#131313;
         --accent: #FFB320;
         --text: #FFFFFF;
+    }
+
+    nav {
+        background-color: var(--bg-dark);
+        border-bottom: 4px solid var(--accent);
+    }
+
+    .logo {
+        color: var(--accent);
+        font-family: 'Bruno Ace', sans-serif;
+        font-weight: 500;
+        font-size: x-large;
+    }
+
+    .pages {
+        color: var(--text);
+        font-family: 'Bruno Ace SC', sans-serif;
+    }
+
+    .login {
+        background-color: var(--accent);
+        padding-block: 5px;
+        padding-inline: 10px;
+        border-radius: 25px;
+        font-family: 'Bruno Ace', sans-serif;
+        font-weight: 400;
+        font-size: medium;
+    }
+
+    .news {
+        background-color: var(--accent);
+        padding: 11px;
+        color: var(--text);
+        font-family: 'Titillium Web', sans-serif;
+        font-size: large;
+        font-weight: 500;
+        width: 500px;
+        text-indent: 220px;
+    }
+
+    .news-carousel {
+        background-color: var(--bg-dark);
+        color: var(--text);
+        margin: 0;
+        padding: 13px;
+        padding-inline: 50px;
+        width: 100%;
+    }
+
+    .news-carousel ul {
+        width: 100%;
     }
 }
