@@ -1,4 +1,5 @@
 import Navbar from "../NavBar";
+import Footer from "../Footer";
 import { Outlet } from "react-router-dom";
 
 export default function MainTemplate() {
@@ -6,6 +7,7 @@ export default function MainTemplate() {
     <>
       <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 }

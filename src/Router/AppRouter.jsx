@@ -11,9 +11,9 @@ export default function AppRouter() {
       <Routes>
         <Route element={<MainTemplate />}>
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<Games />} />
-          <Route path="/" element={<Forums />} />
-          <Route path="/" element={<Blog />} />
+          <Route path="/Games" element={<Games />} />
+          <Route path="/Forums" element={<Forums />} />
+          <Route path="/Blog" element={<Blog />} />
         </Route>
       </Routes>
     </BrowserRouter>
