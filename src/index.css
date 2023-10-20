@@ -15,6 +15,8 @@
         --text: #FFFFFF;
     }
 
+    /* NAVBAR START*/
+
     nav {
         background-color: var(--bg-dark);
         border-bottom: 4px solid var(--accent);
@@ -64,5 +66,64 @@
 
     .news-carousel ul {
         width: 100%;
+    }
+
+    /* THIS IS THE END OF THE NAVBAR*/
+
+
+    /* FOOTER START */
+
+    .bg-bottom {
+        background-image: url(src/assets/Images/background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;
+    }
+
+    .left-panel {
+        padding-left: 100px;
+    }
+
+    h3 {
+        color: var(--accent);
+        font-family: 'Bruno Ace', sans-serif;
+        font-weight: 500;
+        font-size: xx-large;
+        padding-block: 50px;
+        padding-inline-start: 50px;
+    }
+
+    p {
+        color: var(--text);
+        font-family: 'Bruno Ace SC', sans-serif;
+        font-size: larger;
+        padding-block-end: 70px;
+        padding-inline: 40px;
+    }
+
+    .icons {
+        padding-left: 100px;
+    }
+
+    span {
+        color: var(--text);
+    }
+
+    .bot-nav {
+        color: var(--text);
+        font-family: 'Bruno Ace SC', sans-serif;
+        padding-inline-end: 180px;
+    }
+
+    .Avatar {
+        position: absolute;
+        inset-block-end: -470px;
+        width: 900px;
+        z-index: 2;
+    }
+
+    section {
+        background-color: rgba(19, 19, 19, 0.9);
+        z-index: 5;
     }
 }
