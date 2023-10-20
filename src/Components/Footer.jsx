@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <footer className="absolute inset-x-0 bottom-0">
+      <footer>
         <div className="flex left-panel bg-bottom ps-12">
           <div>
             <div>
@@ -17,7 +17,7 @@ export default function Footer() {
               <li><a href=""><img src="src/assets/Icons/windows-line.png" alt="" /></a></li>
             </ul>
           </div>
-          <div className="Avatar absolute end-10 bottom-12">
+          <div className="Avatar end-10">
             <img src="src/assets/Images/Avatar.png" alt="" />
           </div>
         </div>

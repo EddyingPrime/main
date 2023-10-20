@@ -116,6 +116,8 @@
     }
 
     .Avatar {
+        position: absolute;
+        inset-block-end: -470px;
         width: 900px;
         z-index: 2;
     }
