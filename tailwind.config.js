@@ -7,7 +7,44 @@ export default {
       accent: "#FFB320",
       white: "#FFF",
     },
-    extend: {},
+    // Screens
+    screens: {
+      'phone': '390px',
+      // => @media (min-width: 390px) { ... }
+      'tablet': '720px',
+      // => @media (min-width: 640px) { ... }
+
+      'laptop': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'desktop': '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
+
+
+
+    extend: {
+      // Background Utilities
+      backgroundColor: {
+        'dark': '#131313',
+        'accent': '#FFB320',
+      },
+      // Font Color Utilities
+      textColor: {
+        'default': '#FFFFFF',
+        'accent': '#FFB320',
+      },
+      // Font Style Utilities
+      fontFamily: {
+        'Titilium':['Titillium Web', 'sans-serif'],
+        'BrunoSC':['Bruno Ace SC', 'sans-serif'],
+        'Bruno':['Bruno Ace', 'sans-serif'],
+      }
+    },
+    // Border Utilities
+    borderColor: {
+      'accent': '#FFB320',
+    }
   },
   plugins: [],
 };

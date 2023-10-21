@@ -7,7 +7,6 @@ export default function MainTemplate() {
     <>
       <Navbar />
       <Outlet />
-      <Footer />
     </>
   );
 }
