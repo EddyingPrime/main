@@ -1,44 +1,124 @@
-import image1 from "../assets/Images/1.jpg";
-import image2 from "../assets/Images/2.jpg";
-import image3 from "../assets/Images/3.jpg";
-import image4 from "../assets/Images/4.jpg";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Games() {
-  const images = [
-    image1,
-    image2,
-    image3,
-    image1,
-    image2,
-    image3,
-    image4,
-    image1,
-    image2,
-    image3,
-  ];
+  const [gameData, setGameData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [sortingCategory, setSortingCategory] = useState("alphabetical");
+  const cardsPerPage = 9;
+
+  useEffect(() => {
+    async function fetchGameData() {
+      const options = {
+        method: "GET",
+        url: "https://free-to-play-games-database.p.rapidapi.com/api/games",
+        params: {
+          "sort-by": sortingCategory,
+        },
+        headers: {
+          "X-RapidAPI-Key":
+            "b3e8d8175emshef7f44fe5460655p158376jsn3e1860802868",
+          "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+        },
+      };
+
+      try {
+        const response = await axios.request(options);
+        setGameData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchGameData();
+  }, [sortingCategory]);
+
+  // index range per current page
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = gameData.slice(indexOfFirstCard, indexOfLastCard);
+
+  //  Page
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
-    <div className="grid grid-row-3 col-4 gap-4 mt-5 mb-20 mx-40">
-      <div className="bg-gray p-4 border text-center col-span-4">
-        <img src={image2} alt="" />
+    <div className=" grid col-4 gap-4 mx-3 px-3">
+      <div className="p-8 text-center col-span-4">
+        <img src={"/"} className="" />
+      </div>
+      <div className="col-span-4 flex gap-2">
+        <select
+          value={currentPage}
+          onChange={(e) => paginate(Number(e.target.value))}
+          className="text-xs px-1 py-1 rounded-md bg-whitefocus:outline-none border"
+        >
+          {Array.from(
+            Array(Math.ceil(gameData.length / cardsPerPage)),
+            (_, i) => (
+              <option key={i + 1} value={i + 1}>
+                Page {i + 1}
+              </option>
+            )
+          )}
+        </select>
+        <select
+          value={sortingCategory}
+          onChange={(e) => setSortingCategory(e.target.value)}
+          className="text-xs px-1 py-1 rounded-md bg-whitefocus:outline-none border"
+        >
+          <option value="alphabetical">Sort by Name</option>
+          <option value="genre">Sort by Genre</option>
+          <option value="release_date">Sort by Date</option>
+        </select>
       </div>
       <div className="grid grid-rows-2 col-span-1 gap-4">
-        <div className="bg-gray p-2 text-center">
-          <img src="#" alt="" />
-        </div>
-        <div className="bg-gray p-2 text-center">
-          <img src={image2} alt="" />
+        <div className="p-2 text-center"></div>
+
+        <div className="p-2 text-center">
+          <img src={"/"} className="" />
         </div>
       </div>
-      <div className="col-span-3">
-        <div className=" grid grid-cols-3 row-3 gap-4">
-          {images.slice(1).map((image, index) => (
-            <div key={index} className="bg-gray p-2 text-center">
-              <img src={image} alt={`Card ${index + 1}`} />
+      <div className="tablet:col-span-3">
+        <div className="grid tablet:grid-cols-3 row-3 gap-4">
+          {currentCards.map((game, index) => (
+            <div key={index} className="p-2 bg-dark">
+              <a href={game.game_url} target="_blank" rel="noreferrer">
+                <img
+                  src={game.thumbnail}
+                  alt={`Game ${index + 1}`}
+                  className="object-cover w-full"
+                />
+              </a>
+              <div className="mt-2 flex gap-1">
+                <span className="text-white m-0 p-1 border rounded-lg text-xs">
+                  {game.genre}
+                </span>
+                <span className="text-white m-0 p-1 border rounded-lg text-xs">
+                  {game.platform}
+                </span>
+              </div>
             </div>
           ))}
         </div>
       </div>
+      <div className="col-span-4">
+        <select
+          value={currentPage}
+          onChange={(e) => paginate(Number(e.target.value))}
+          className="text-xs px-1 py-1 rounded-md bg-whitefocus:outline-none border"
+        >
+          {Array.from(
+            Array(Math.ceil(gameData.length / cardsPerPage)),
+            (_, i) => (
+              <option key={i + 1} value={i + 1}>
+                Page {i + 1}
+              </option>
+            )
+          )}
+        </select>
+      </div>
     </div>
   );
 }
-
