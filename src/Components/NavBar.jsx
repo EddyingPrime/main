@@ -9,7 +9,7 @@ export default function NavBar() {
         <div className="flex justify-between px-4">
           <h2 className="text-accent font-Bruno text-2xl py-4 , tablet:py-0">GameHaven</h2>
           <div className="py-5 tablet:hidden">
-            <span className="bg-accent font-Titilium rounded-full px-4 py-3">Log In | Register</span>
+            <span className="bg-accent font-Titilium rounded-full px-4 py-3 , hover:text-default"><a href="">Log In | Register</a></span>
           </div>
         </div>
         <div>
@@ -21,7 +21,7 @@ export default function NavBar() {
           </ul>
         </div>
         <div className="invisible tablet:visible">
-          <span className="bg-accent font-Titilium rounded-full px-4 py-3">Login / Register</span>
+          <span className="bg-accent font-Titilium rounded-full px-4 py-3 , hover:text-default"><a href="">Log In | Register</a></span>
         </div>
       </nav>
     </>
