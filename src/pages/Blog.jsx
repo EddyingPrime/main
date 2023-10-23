@@ -1,7 +1,12 @@
-
+import NavBar from '../Components/NavBar';
 
 
 
 export default function Blog() {
-  return <div>Blog</div>;
+  return (
+    <>
+      <NavBar />
+      <div>Blog</div>
+    </>
+  )
 }
