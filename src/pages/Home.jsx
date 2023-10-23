@@ -1,3 +1,16 @@
+import NavBar from '../Components/NavBar';
+import Carousel from '../Components/Carousel';
+
+
+
 export default function Home() {
-  return <div>Content</div>;
+  return (
+    <>
+      <NavBar />
+      <Carousel />
+    </>
+  )
 }
+
+
+

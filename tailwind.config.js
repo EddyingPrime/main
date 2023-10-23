@@ -24,10 +24,17 @@ export default {
 
 
     extend: {
+      // Container Utilities
+      width: {
+        'container': '1440px',
+      },
       // Background Utilities
       backgroundColor: {
         'dark': '#131313',
         'accent': '#FFB320',
+      },
+      top: {
+        '700': '35rem',
       },
       // Font Color Utilities
       textColor: {
@@ -39,12 +46,21 @@ export default {
         'Titilium':['Titillium Web', 'sans-serif'],
         'BrunoSC':['Bruno Ace SC', 'sans-serif'],
         'Bruno':['Bruno Ace', 'sans-serif'],
+      },
+      // Border Utilities
+      borderColor: {
+      'accent': '#FFB320',
+      },
+      // Avatar Height
+      width: {
+        'small': '300px',
+        'medium': '500px',
+      },
+      // Absolute Bottom Adjustment
+      marginBottom: {
+        '19': '19px',
       }
     },
-    // Border Utilities
-    borderColor: {
-      'accent': '#FFB320',
-    }
   },
   plugins: [],
 };
