@@ -1,3 +1,12 @@
+import NavBar from '../Components/NavBar';
+
+
+
 export default function Forums() {
-  return <div>Forums</div>;
+  return (
+    <>
+      <NavBar />
+      <div>Forums</div>
+    </>
+  )
 }
