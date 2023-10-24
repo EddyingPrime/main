@@ -5,7 +5,7 @@ export default function Games() {
   const [gameData, setGameData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortingCategory, setSortingCategory] = useState("alphabetical");
-  const cardsPerPage = 9;
+  const cardsPerPage = 12;
 
   useEffect(() => {
     async function fetchGameData() {
@@ -81,7 +81,7 @@ export default function Games() {
         </div>
       </div>
       <div className="tablet:col-span-3">
-        <div className="grid tablet:grid-cols-3 row-3 gap-4">
+        <div className="grid desktop:grid-cols-4 row-4, tablet:grid-cols-3 row-3  gap-10">
           {currentCards.map((game, index) => (
             <div key={index} className="p-2 bg-dark">
               <a href={game.game_url} target="_blank" rel="noreferrer">
