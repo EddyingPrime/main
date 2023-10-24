@@ -7,7 +7,8 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <Carousel />
+      <Carousel style="position: relative"/>
+      <div>This is a test sentence!</div>
     </>
   )
 }
