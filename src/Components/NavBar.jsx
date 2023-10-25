@@ -13,7 +13,7 @@ export default function NavBar() {
           </div>
         </div>
         <div>
-          <ul className="flex justify-center gap-14 pt-2 text-default text-lg font-BrunoSC text-md h-9 , tablet:gap-4 tablet:pb-0 tablet:pt-2">
+          <ul className="flex justify-center gap-4 pt-2 text-default text-lg font-BrunoSC text-md h-9 , tablet:gap-14 tablet:pb-0 tablet:pt-2">
             <li className='hover:border-b-2 hover:border-b-accent'><Link to="/">Home</Link></li>
             <li className='hover:border-b-2 hover:border-b-accent'><Link to="/games">Games</Link></li>
             <li className='hover:border-b-2 hover:border-b-accent'><Link to="/blog">Blog</Link></li>
