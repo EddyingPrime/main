@@ -51,47 +51,88 @@ export default function Games() {
         <div className="p-8 text-center col-span-4">
           <img src={"/"} className="" />
         </div>
-        <div className="col-span-4 flex gap-2">
-          <select
-            value={currentPage}
-            onChange={(e) => paginate(Number(e.target.value))}
-            className="text-xs px-1 py-1 rounded-md bg-whitefocus:outline-none border"
-          >
-            {Array.from(
-              Array(Math.ceil(gameData.length / cardsPerPage)),
-              (_, i) => (
-                <option key={i + 1} value={i + 1}>
-                  Page {i + 1}
-                </option>
-              )
-            )}
-          </select>
-          <select
-            value={sortingCategory}
-            onChange={(e) => setSortingCategory(e.target.value)}
-            className="text-xs px-1 py-1 rounded-md bg-whitefocus:outline-none border"
-          >
-            <option value="alphabetical">Sort by Name</option>
-            <option value="genre">Sort by Genre</option>
-            <option value="release_date">Sort by Date</option>
-          </select>
+        <div className="col-span-4 flex gap-2 justify-end">
+          <div className="col-span-4 flex gap-2">
+            <div>
+              {Array.from(
+                Array(Math.min(4, Math.ceil(gameData.length / cardsPerPage))),
+                (_, i) => (
+                  <button
+                    key={i + 1}
+                    onClick={() => paginate(i + 1)}
+                    className={`text-xs px-2 py-1 rounded-md bg-white focus:outline-none border m-2 ${
+                      i + 1 === currentPage ? "selected" : ""
+                    }`}
+                  >
+                    {i + 1}
+                  </button>
+                )
+              )}
+            </div>
+            <button
+              onClick={() => paginate(currentPage + 1)}
+              disabled={
+                currentPage >= Math.ceil(gameData.length / cardsPerPage)
+              }
+              className={`text-xs px-2 py-1 rounded-md bg-white focus:outline-none border m-2 ${
+                currentPage >= Math.ceil(gameData.length / cardsPerPage)
+                  ? "disabled"
+                  : ""
+              }`}
+            >
+              Next
+            </button>
+          </div>
         </div>
-        <div className="grid grid-rows-2 col-span-1 gap-4">
-          <div className="p-2 text-center"></div>
-
+        <div className="grid grid-rows-2 col-span-1 gap-4 ">
+          <ul className="">
+            <li>
+              {" "}
+              <button
+                className={`text-m px-2 py-1 rounded-md bg-white focus:outline-none  ${
+                  sortingCategory === "alphabetical" ? "selected" : ""
+                }`}
+                onClick={() => setSortingCategory("alphabetical")}
+              >
+                Sort by Name
+              </button>
+            </li>
+            <li>
+              {" "}
+              <button
+                className={`text-m px-2 py-1 rounded-md bg-white focus:outline-none  ${
+                  sortingCategory === "genre" ? "selected" : ""
+                }`}
+                onClick={() => setSortingCategory("genre")}
+              >
+                Sort by Genre
+              </button>
+            </li>
+            <li>
+              {" "}
+              <button
+                className={`text-m px-2 py-1 rounded-md bg-white focus:outline-none ${
+                  sortingCategory === "release_date" ? "selected" : ""
+                }`}
+                onClick={() => setSortingCategory("release_date")}
+              >
+                Sort by Date
+              </button>
+            </li>
+          </ul>
           <div className="p-2 text-center">
             <img src={"/"} className="" />
           </div>
         </div>
         <div className="tablet:col-span-3">
-          <div className="grid desktop:grid-cols-4 row-4, tablet:grid-cols-3 row-3  gap-10">
+          <div className="grid desktop:grid-cols-4 row-4, tablet:grid-cols-3 row-3 gap-10">
             {currentCards.map((game, index) => (
-              <div key={index} className="p-2 bg-dark">
+              <div key={index} className="p-2 bg-dark rounded-2xl">
                 <a href={game.game_url} target="_blank" rel="noreferrer">
                   <img
                     src={game.thumbnail}
                     alt={`Game ${index + 1}`}
-                    className="object-cover w-full"
+                    className="object-cover w-full rounded-xl"
                   />
                 </a>
                 <div className="mt-2 flex gap-1">
@@ -106,21 +147,34 @@ export default function Games() {
             ))}
           </div>
         </div>
-        <div className="col-span-4">
-          <select
-            value={currentPage}
-            onChange={(e) => paginate(Number(e.target.value))}
-            className="text-xs px-1 py-1 rounded-md bg-whitefocus:outline-none border"
-          >
+        <div className="col-span-4 flex gap-2">
+          <div>
             {Array.from(
-              Array(Math.ceil(gameData.length / cardsPerPage)),
+              Array(Math.min(4, Math.ceil(gameData.length / cardsPerPage))),
               (_, i) => (
-                <option key={i + 1} value={i + 1}>
-                  Page {i + 1}
-                </option>
+                <button
+                  key={i + 1}
+                  onClick={() => paginate(i + 1)}
+                  className={`text-xs px-2 py-1 rounded-md bg-white focus:outline-none border m-2 ${
+                    i + 1 === currentPage ? "selected" : ""
+                  }`}
+                >
+                  {i + 1}
+                </button>
               )
             )}
-          </select>
+          </div>
+          <button
+            onClick={() => paginate(currentPage + 1)}
+            disabled={currentPage >= Math.ceil(gameData.length / cardsPerPage)}
+            className={`text-xs px-2 py-1 rounded-md bg-white focus:outline-none border m-2 ${
+              currentPage >= Math.ceil(gameData.length / cardsPerPage)
+                ? "disabled"
+                : ""
+            }`}
+          >
+            Next
+          </button>
         </div>
       </div>
     </>
