@@ -1,5 +1,6 @@
 import NavBar from '../Components/NavBar';
 import Carousel from '../Components/Carousel';
+import Article from '../Components/Article';
 import demoVideo from '../assets/Images/demoVideo.mp4'
 
 const slides = [
@@ -14,12 +15,13 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <Carousel>
+      <Carousel autoSlide={true} autoSlideInterval={78000}>
         {[
           <video key="video" src={demoVideo} autoPlay muted loop />,
           ...slides.map((s, index) => <img key={index} src={s} alt={`Slide ${index}`} />),
         ]}
       </Carousel>
+      <Article />
     </>
   )
 };

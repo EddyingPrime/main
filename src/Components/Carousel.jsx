@@ -19,7 +19,7 @@ export default function Carousel({
   }, [])
 
   return (
-      <main className="overflow-hidden relative h-[770px]">
+      <main className="overflow-hidden relative desktop:h-[890px]">
         <div className="flex transition-transform ease-in-out duration-1000" style={{ transform: `translateX(-${curr * 100}%)`}}>
         {slides.map((slide, index) => (
           <div key={index} style={{ minWidth: "100%" }}>
@@ -28,17 +28,17 @@ export default function Carousel({
         ))}
         </div>
         <div className="absolute inset-0 flex items-center justify-between p-4">
-          <button onClick={prev} className="p-1 rounded-full text-gray-800 hover:text-accent" aria-label="Previous">
+          <button onClick={prev} className="z-10 p-1 rounded-full text-gray-800 hover:text-accent" aria-label="Previous">
             <ChevronLeft size={40} />
           </button>
-          <button onClick={next} className="p-1 rounded-full text-gray-800 hover:text-accent" aria-label="Next">
+          <button onClick={next} className="z-10 p-1 rounded-full text-gray-800 hover:text-accent" aria-label="Next">
             <ChevronRight size={40} />
           </button>
-          <div className="absolute flex ml-40 mt-96 w-fit rounded bg-dark bg-opacity-40 p-6 , hover:bg-dark hover:bg-opacity-75 hover:p-6 hover:rounded">
+          <div className="absolute inset-0 z-0 flex items-center justify-center rounded">
             <div className="text-center">
-              <h1 className="text-accent text-4xl font-bold drop-shadow font-Titilium">EXPLORE A HUGE LIBRARY OF FREE GAMES</h1>
-              <p className="text-default text-xl mt-4"><em>"Explore and Connect. Your Gateway to Free Games and building a community."</em></p><br />
-              <Link className="text-accent font-Titilium text-xl hover:border-b" to="/games">Browse Now!</Link>
+              <h1 className="text-accent font-bold font-Titilium , tablet:text-[30px] tablet:text-bold , desktop:text-[40px]">EXPLORE A HUGE LIBRARY OF FREE GAMES</h1>
+              <p className="text-default , tablet:text-xl"><em>"Explore and Connect. Your Gateway to Free Games and building a community."</em></p><br />
+              <Link className="text-accent font-Titilium text-xl hover:border-b desktop:text-[30px]" to="/games">Browse Now!</Link>
             </div>
           </div>
           <div className="absolute bottom-4 right-0 left-0">
