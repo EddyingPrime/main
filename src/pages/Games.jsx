@@ -6,7 +6,7 @@ export default function Games() {
   const [gameData, setGameData] = useState([]);
   const [originalData, setOriginalData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [sortingCategory, setSortingCategory] = useState("alphabetical");
+  const [sortingCategory] = useState("alphabetical");
   const [searchQuery, setSearchQuery] = useState("");
   const cardsPerPage = 12;
 
@@ -44,21 +44,22 @@ export default function Games() {
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   let currentCards = gameData.slice(indexOfFirstCard, indexOfLastCard);
 
-  //  Page
+  // Page
   const page = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
-  const sortByName = () => {
-    const sortedData = [...gameData].sort((a, b) =>
-      a.title.localeCompare(b.title)
-    );
-    setGameData(sortedData);
-  };
-
-  const sort = () => {
+  // sort latest
+  const sort1 = () => {
     const sortData = [...originalData].sort((a, b) =>
       a.release_date > b.release_date ? -1 : 1
+    );
+    console.log(sortData);
+    setGameData(sortData);
+  };
+  // previews latest
+  const sort2 = () => {
+    const sortData = [...originalData].sort((a, b) =>
+      a.release_date > b.release_date ? 1 : -1
     );
     console.log(sortData);
     setGameData(sortData);
@@ -79,12 +80,11 @@ export default function Games() {
         originalData.filter((data) => data.title.toLowerCase().includes(query))
       );
     }
-    console.log(query);
   };
   return (
     <>
       <NavBar />
-      <div className="">
+      <div className=" tablet:mx-20 , phone:px-3">
         <div className="p-10 text-center">
           <img src="/" className="" />
         </div>
@@ -105,20 +105,17 @@ export default function Games() {
                 className={`bg-white text-xs m-2 p-1 rounded-md ${
                   sortingCategory === "alphabetical" ? "selected" : ""
                 }`}
-                onClick={() => {
-                  sortByName();
-                  setSortingCategory("alphabetical");
-                }}
+                onClick={() => sort1()}
               >
-                Sort by Name
+                Latest Release
               </button>
               <button
                 className={`bg-white text-xs m-2 p-1 rounded-md ${
                   sortingCategory === "alphabetical" ? "selected" : ""
                 }`}
-                onClick={() => sort()}
+                onClick={() => sort2()}
               >
-                Sort by Release
+                Previous Release
               </button>
             </div>
             <div className="flex justify-end border">
@@ -129,7 +126,7 @@ export default function Games() {
                   currentPage <= 1 ? "disabled" : ""
                 }`}
               >
-                Previous
+                &#60;
               </button>
 
               <div>
@@ -159,7 +156,7 @@ export default function Games() {
                     : ""
                 }`}
               >
-                Next
+                &#62;
               </button>
             </div>
           </div>
@@ -185,7 +182,7 @@ export default function Games() {
                     <a href={game.game_url} target="_blank" rel="noreferrer">
                       <h3 className="text-xl font-bold py-10">{game.title}</h3>
                       <p className="text-xs">{game.short_description}</p>
-                      <p className="text-xm">{game.publisher}</p>
+                      <p className="text-xm py-4">{game.publisher}</p>
                       <span className="text-xs bottom-0">
                         {game.release_date}
                       </span>
@@ -203,7 +200,7 @@ export default function Games() {
                 currentPage <= 1 ? "disabled" : ""
               }`}
             >
-              Previous
+              &#60;
             </button>
             <div>
               {Array.from(
@@ -232,7 +229,7 @@ export default function Games() {
                   : ""
               }`}
             >
-              Next
+              &#62;
             </button>
           </div>
         </div>
