@@ -4,8 +4,9 @@ export default {
   theme: {
     colors: {
       primary: "#131313",
-      lgray: "#d3d3d3",
+      lgray: "#242424",
       white: "#FFF",
+      Alt: "#9D9288",
     },
     // Screens
     screens: {

@@ -88,7 +88,7 @@ export default function Games() {
         <div className="p-10 text-center">
           <img src="/" className="" />
         </div>
-        <div className="border bg-lgray">
+        <div className="border bg-white">
           <div className="col-span-4  bg-accent">
             <div className="flex border">
               <form onSubmit={handleSearch}>
@@ -163,7 +163,7 @@ export default function Games() {
           <div className="col-span-4 m-6">
             <div className="grid desktop:grid-cols-4 row-4 mx-10, tablet:grid-cols-3 row-4 gap-10">
               {currentCards.map((game, index) => (
-                <div key={index} className="p-2 bg-dark rounded-2xl card">
+                <div key={index} className="p-2 bg-lgray rounded-2xl card">
                   <img
                     src={game.thumbnail}
                     alt={`Game ${index + 1}`}
@@ -180,12 +180,12 @@ export default function Games() {
                   </div>
                   <div className="hover-content p-4 text-white rounded-2xl">
                     <a href={game.game_url} target="_blank" rel="noreferrer">
-                      <h3 className="text-xl font-bold py-10">{game.title}</h3>
-                      <p className="text-xs">{game.short_description}</p>
+                      <h3 className="text-xl font-bold py-5">{game.title}</h3>
+                      <p className="text-xs font-bold">
+                        {game.short_description}
+                      </p>
                       <p className="text-xm py-4">{game.publisher}</p>
-                      <span className="text-xs bottom-0">
-                        {game.release_date}
-                      </span>
+                      <span className="text-xs">{game.release_date}</span>
                     </a>
                   </div>
                 </div>
