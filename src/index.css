@@ -1,27 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Bayon&family=Bruno+Ace&family=Bruno+Ace+SC&family=Titillium+Web&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bayon&family=Bruno+Ace&family=Bruno+Ace+SC&family=Titillium+Web&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @layer base {
-    * {
-        margin: 0;
-        padding: 0;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
-    :root {
-        --bg-dark:#131313;
-        --accent: #FFB320;
-        --text: #FFFFFF;
-    }
+  :root {
+    --bg-dark: #131313;
+    --accent: #ffb320;
+    --text: #ffffff;
+  }
 
-    .ftr-content {
-        background-image: url(assets/Images/background.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+  .ftr-content {
+    background-image: url(assets/Images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-    section {
-        background-color: rgba(19, 19, 19, 0.95);
-    }
+  section {
+    background-color: rgba(19, 19, 19, 0.95);
+  }
+
+  .card {
+    position: relative;
+  }
+
+  .hover-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+  }
+
+  .card:hover .hover-content {
+    display: block;
+  }
 }
