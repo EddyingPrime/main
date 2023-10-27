@@ -6,6 +6,7 @@ export default {
       primary: "#131313",
       accent: "#FFB320",
       white: "#FFF",
+      smoke: "#d3d3d3",
     },
     // Screens
     screens: {
@@ -32,6 +33,12 @@ export default {
       backgroundColor: {
         'dark': '#131313',
         'accent': '#FFB320',
+        'lightgray': '#778899',
+      },
+      backgroundImage: {
+        'home': "url('./src/assets/Images/bg-home.jpg')",
+        'image': "url('./src/assets/Images/background.jpg')",
+        'parallax': "url('./src/assets/Images/parallax.jpg')",
       },
       top: {
         '700': '35rem',
@@ -40,12 +47,15 @@ export default {
       textColor: {
         'default': '#FFFFFF',
         'accent': '#FFB320',
+        'smoke': '#d3d3d3',
+        'gray': '#333333',
       },
       // Font Style Utilities
       fontFamily: {
         'Titilium':['Titillium Web', 'sans-serif'],
         'BrunoSC':['Bruno Ace SC', 'sans-serif'],
         'Bruno':['Bruno Ace', 'sans-serif'],
+        'Ops':['Black Ops One', 'sans-serif'],
       },
       // Border Utilities
       borderColor: {

@@ -1,4 +1,30 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+
 export default function Article() {
+    const [data, setGameData] = useState([]);
+
+    const options = {
+        method: 'GET',
+        url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
+        params: {
+        },
+        headers: {
+          'X-RapidAPI-Key': '01ccb379c2mshcab4c4b3ada3b4bp17f1edjsn6e22b74878b4',
+          'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+        }
+      };
+
+      useEffect(() => {
+        axios.request(options)
+        .then((res) => {
+            // Limit the data to the first 8 entries
+            const limitedData = res.data.slice(0, 8);
+            setGameData(limitedData);
+        });
+    }, []);
+
     return (
         <>
             <div className="flex">
@@ -11,7 +37,7 @@ export default function Article() {
                     tablet:w-[900px] 
                     desktop:w-full
                     ">
-                        <marquee direction="left" scrollamount="12">
+                        <marquee direction="left">
                             <div className="flex flex-row items-center">
                                 <h5 className="bg-accent ml-2 px-2">RACING</h5>
                                 <p className="p-1
@@ -33,77 +59,112 @@ export default function Article() {
                     </div>
                 </div>
             </div>
-            <section className="flex">
-                <div className="grid grid-cols-2 row-span-2 w-3/4 h-[800px]">
-                    <div className="flex items-center justify-center">
-                        <div>Sample</div>
-                    </div>
-                    <div className="flex items-center justify-center">
-                        <div>Sample</div>
-                    </div>
-                    <div className="flex items-center justify-center">
-                        <div>Sample</div>
-                    </div>
-                    <div className="flex items-center justify-center">
-                        <div>Sample</div>
+            <section className="
+            tablet:flex tablet:justify-around
+            desktop:flex">
+                <div className="flex justify-center">
+                    <div>
+                        <h3 className="text-lg font-Titilium mt-10 pl-2 mb-2">Featured Games</h3>
+                        <div className="grid gap-y-4
+                        tablet:grid tablet:grid-cols-2 tablet:gap-10
+                        desktop:grid-cols-4">
+                            {data.map((game, index) => (
+                                <div key={index} className="bg-white w-[260px] p-3 rounded drop-shadow-xl hover:scale-105 hover:ease-in-out">
+                                    <img className="w-[250px] h-[160px] rounded" src={game.thumbnail} alt="" />
+                                    <h4 className="text-[16px] font-Titilium pl-3 pt-2 pb-1">{game.title}</h4>
+                                    <p className="text-smoke text-sm pl-3 h-[120px] leading-tight">{game.short_description}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-                <div className="w-1/4 h-[800px] mt-10">
-                    <input type="text" placeholder="search p-2" />
-                    <div className="mt-4">
-                        <h3>Latest Post</h3>
-                        <div className="flex my-4">
-                            <img src="src/assets/Icons/Mac.png" alt="" />
-                            <div>
-                                <div>Date</div>
-                                <div>Game Name</div>
-                                <div>Context</div>
-                                <div>Posted By</div>
+                <div className="mt-10 flex justify-center
+                desktop:h-[780px] desktop:w-1/4
+                ">
+                    <div>
+                        <div className="flex items-center">
+                            <img className="absolute pl-[270px]" src="src/assets/Images/search-logo.png" alt="" />
+                            <form action="">
+                                <input className="border-smoke border-[0.01rem] rounded w-[300px]" type="text" placeholder="  Search" />
+                            </form>
+                        </div>
+                        <div>
+                            <div className="mt-4">
+                                <h3 className="font-Titilium">Latest Post</h3>
+                                <div className="flex my-4 items-center gap-4">
+                                    <div>
+                                        <img className="w-[110px] h-[90px]" src="src/assets/Images/eternal.png" alt="" />
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>Date</li>
+                                            <li>Game Name</li>
+                                            <li>Context</li>
+                                            <li>Posted By</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="flex my-4 items-center gap-4">
+                                    <div>
+                                        <img className="w-[110px] h-[90px]" src="src/assets/Images/eternal.png" alt="" />
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>Date</li>
+                                            <li>Game Name</li>
+                                            <li>Context</li>
+                                            <li>Posted By</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="flex my-4 items-center gap-4">
+                                    <div>
+                                        <img className="w-[110px] h-[90px]" src="src/assets/Images/eternal.png" alt="" />
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>Date</li>
+                                            <li>Game Name</li>
+                                            <li>Context</li>
+                                            <li>Posted By</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="flex">
-                            <img src="src/assets/Icons/Mac.png" alt="" />
-                            <div>
-                                <div>Date</div>
-                                <div>Game Name</div>
-                                <div>Context</div>
-                                <div>Posted By</div>
-                            </div>
-                        </div>
-                        <div className="flex">
-                            <img src="src/assets/Icons/Mac.png" alt="" />
-                            <div>
-                                <div>Date</div>
-                                <div>Game Name</div>
-                                <div>Context</div>
-                                <div>Posted By</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-4">
-                        <h3>Latest Comments</h3>
-                        <div className="flex border-b-2 border-white">
-                            <img src="src/assets/Icons/Mac.png" alt="" />
-                            <div>
-                                <div>UserName</div>
-                                <div>Comment</div>
-                                <div>Date</div>
-                            </div>
-                        </div>
-                        <div className="flex border-b-2 border-white">
-                        <img src="src/assets/Icons/Mac.png" alt="" />
-                            <div>
-                                <div>UserName</div>
-                                <div>Comment</div>
-                                <div>Date</div>
-                            </div>
-                        </div>
-                        <div className="flex border-b-2 border-white">
-                        <img src="src/assets/Icons/Mac.png" alt="" />
-                            <div>
-                                <div>UserName</div>
-                                <div>Comment</div>
-                                <div>Date</div>
+                        <div>
+                            <div className="mt-4 w-[300px]">
+                                <h3 className="font-Titilium">Latest Comments</h3>
+                                <div className="flex border-b-[0.1rem] border-smoke p-2 my-4 items-center gap-4">
+                                    <img className="w-[60px] h-[60px] rounded-full" src="src/assets/Images/eternal.png" alt="" />
+                                    <div>
+                                        <ul>
+                                            <li>UserName</li>
+                                            <li>Comment</li>
+                                            <li>Date</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="flex border-b-[0.1rem] border-smoke p-2 my-4 items-center gap-4">
+                                    <img className="w-[60px] h-[60px] rounded-full" src="src/assets/Images/eternal.png" alt="" />
+                                    <div>
+                                        <ul>
+                                            <li>UserName</li>
+                                            <li>Comment</li>
+                                            <li>Date</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="flex border-b-[0.1rem] border-smoke p-2 my-4 items-center gap-4">
+                                    <img className="w-[60px] h-[60px] rounded-full" src="src/assets/Images/eternal.png" alt="" />
+                                    <div>
+                                        <ul>
+                                            <li>UserName</li>
+                                            <li>Comment</li>
+                                            <li>Date</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

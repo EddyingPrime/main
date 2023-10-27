@@ -19,7 +19,7 @@ export default function Carousel({
   }, [])
 
   return (
-      <main className="overflow-hidden relative desktop:h-[890px]">
+      <main className="overflow-hidden relative desktop:h-[810px]">
         <div className="flex transition-transform ease-in-out duration-1000" style={{ transform: `translateX(-${curr * 100}%)`}}>
         {slides.map((slide, index) => (
           <div key={index} style={{ minWidth: "100%" }}>
@@ -36,8 +36,8 @@ export default function Carousel({
           </button>
           <div className="absolute inset-0 z-0 flex items-center justify-center rounded">
             <div className="text-center">
-              <h1 className="text-accent font-bold font-Titilium , tablet:text-[30px] tablet:text-bold , desktop:text-[40px]">EXPLORE A HUGE LIBRARY OF FREE GAMES</h1>
-              <p className="text-default , tablet:text-xl"><em>"Explore and Connect. Your Gateway to Free Games and building a community."</em></p><br />
+              <h1 className="text-accent font-bold font-Titilium , tablet:text-[30px] tablet:text-bold , desktop:text-[72px]">EXPLORE A HUGE LIBRARY OF FREE GAMES</h1>
+              <p className="text-default , tablet:text-xl , desktop:text-[32px]"><em>"Explore and Connect. Your Gateway to Free Games and building a community."</em></p><br />
               <Link className="text-accent font-Titilium text-xl hover:border-b desktop:text-[30px]" to="/games">Browse Now!</Link>
             </div>
           </div>

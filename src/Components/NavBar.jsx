@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 export default function NavBar() {
   return (
     <>
-      <nav className="default bg-dark border-b-4 border-accent , tablet:fixed tablet:w-full tablet:z-10 tablet:flex tablet:justify-around tablet:h-20 tablet:items-center">
+      <nav className="default bg-dark border-b-4 border-accent , 
+      tablet:w-full tablet:z-10 tablet:flex tablet:justify-around tablet:h-20 tablet:items-center">
         <div className="flex justify-between px-4">
           <h2 className="text-accent font-Bruno text-2xl py-4 , tablet:py-0">GameHaven</h2>
           <div className="py-5 tablet:hidden">
