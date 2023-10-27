@@ -84,7 +84,7 @@ export default function Games() {
   return (
     <>
       <NavBar />
-      <div className=" tablet:mx-20 , phone:px-3">
+      <div className="tablet:mx-20 , phone:px-3">
         <div className="p-10 text-center">
           <img src="/" className="" />
         </div>
@@ -161,7 +161,7 @@ export default function Games() {
             </div>
           </div>
           <div className="col-span-4 m-6">
-            <div className="grid desktop:grid-cols-4 row-4 mx-10, tablet:grid-cols-3 row-4 gap-10">
+            <div className="grid desktop:grid-cols-4 row-4 mx-10 , tablet:grid-cols-3 row-4 gap-10">
               {currentCards.map((game, index) => (
                 <div key={index} className="p-2 bg-lgray rounded-2xl card">
                   <img

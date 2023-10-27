@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bayon&family=Black+Ops+One&family=Bruno+Ace&family=Bruno+Ace+SC&family=Titillium+Web&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bayon&family=Black+Ops+One&family=Bruno+Ace&family=Bruno+Ace+SC&family=Titillium+Web&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +15,38 @@
     --text: #ffffff;
   }
 
-    .text-shadow {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-      }
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  }
+}
+
+section {
+  background-color: rgba(19, 19, 19, 0.95);
+}
+
+.card {
+  position: relative;
+}
+
+.ftr-content {
+  background-image: url(assets/Images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hover-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.card:hover .hover-content {
+  display: block;
 }
