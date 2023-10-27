@@ -20,18 +20,8 @@
   }
 }
 
-section {
-  background-color: rgba(19, 19, 19, 0.95);
-}
-
 .card {
   position: relative;
-}
-
-.ftr-content {
-  background-image: url(assets/Images/background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .hover-content {
