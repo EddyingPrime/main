@@ -4,30 +4,29 @@ export default {
   theme: {
     colors: {
       primary: "#131313",
-      accent: "#FFB320",
+      lgray: "#242424",
       white: "#FFF",
       smoke: "#d3d3d3",
+      Alt: "#9D9288",
     },
     // Screens
     screens: {
-      'phone': '390px',
+      phone: "390px",
       // => @media (min-width: 390px) { ... }
-      'tablet': '720px',
+      tablet: "720px",
       // => @media (min-width: 640px) { ... }
 
-      'laptop': '1024px',
+      laptop: "1024px",
       // => @media (min-width: 1024px) { ... }
 
-      'desktop': '1280px',
+      desktop: "1280px",
       // => @media (min-width: 1280px) { ... }
     },
-
-
 
     extend: {
       // Container Utilities
       width: {
-        'container': '1440px',
+        container: "1440px",
       },
       // Background Utilities
       backgroundColor: {
@@ -39,9 +38,11 @@ export default {
         'home': "url('./src/assets/Images/bg-home.jpg')",
         'image': "url('./src/assets/Images/background.jpg')",
         'parallax': "url('./src/assets/Images/parallax.jpg')",
+        dark: "#131313",
+        accent: "#FFB320",
       },
       top: {
-        '700': '35rem',
+        700: "35rem",
       },
       // Font Color Utilities
       textColor: {
@@ -49,6 +50,8 @@ export default {
         'accent': '#FFB320',
         'smoke': '#d3d3d3',
         'gray': '#333333',
+        default: "#FFFFFF",
+        accent: "#FFB320",
       },
       // Font Style Utilities
       fontFamily: {
@@ -59,17 +62,12 @@ export default {
       },
       // Border Utilities
       borderColor: {
-      'accent': '#FFB320',
-      },
-      // Avatar Height
-      width: {
-        'small': '300px',
-        'medium': '500px',
+        accent: "#FFB320",
       },
       // Absolute Bottom Adjustment
       marginBottom: {
-        '19': '19px',
-      }
+        19: "19px",
+      },
     },
   },
   plugins: [],

@@ -4,16 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-    * {
-        margin: 0;
-        padding: 0;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
-    :root {
-        --bg-dark:#131313;
-        --accent: #FFB320;
-        --text: #FFFFFF;
-    }
+  :root {
+    --bg-dark: #131313;
+    --accent: #ffb320;
+    --text: #ffffff;
+  }
 
     .text-shadow {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
