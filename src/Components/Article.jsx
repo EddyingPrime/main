@@ -60,8 +60,7 @@ export default function Article() {
                 </div>
             </div>
             <section className="
-            tablet:flex tablet:justify-around
-            desktop:flex">
+            desktop:flex desktop:justify-around">
                 <div className="flex justify-center">
                     <div>
                         <h3 className="text-lg font-Titilium mt-10 pl-2 mb-2">Featured Games</h3>
@@ -82,11 +81,11 @@ export default function Article() {
                 desktop:h-[780px] desktop:w-1/4
                 ">
                     <div>
-                        <div className="flex items-center">
-                            <img className="absolute pl-[270px]" src="src/assets/Images/search-logo.png" alt="" />
+                        <div className="flex items-center relative">
                             <form action="">
                                 <input className="border-smoke border-[0.01rem] rounded w-[300px]" type="text" placeholder="  Search" />
                             </form>
+                            <img className="absolute pl-[270px]" src="src/assets/Images/search-logo.png" alt="" />
                         </div>
                         <div>
                             <div className="mt-4">

@@ -19,7 +19,9 @@ export default function Carousel({
   }, [])
 
   return (
-      <main className="overflow-hidden relative desktop:h-[810px]">
+      <main className="overflow-hidden relative
+      tablet:h-[370px]
+      desktop:h-[810px]">
         <div className="flex transition-transform ease-in-out duration-1000" style={{ transform: `translateX(-${curr * 100}%)`}}>
         {slides.map((slide, index) => (
           <div key={index} style={{ minWidth: "100%" }}>
