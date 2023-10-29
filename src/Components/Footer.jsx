@@ -39,22 +39,21 @@ export default function Footer() {
           <div className='
           desktop:w-[650px]'>
             <div>
-              <h3 className='flex justify-center text-accent font-Bruno text-[40px] py-2
+              <h3 className='flex justify-center text-accent font-Bruno text-[40px] py-1
               desktop:text-[50px] desktop:px-10 desktop:pt-10'>GameHaven</h3>
-              <p className="text-default font-Titilium text-center text-lg px-10 pt-4 pb-3"><em>" Your one-stop hub for updates, free game list across platforms, and engaging gaming forums - where gamers unite. "</em></p>
+              <p className="text-default font-Titilium text-center text-lg px-10 pb-6"><em>" Your one-stop hub for updates, free game list across platforms, and engaging gaming forums - where gamers unite. "</em></p>
             </div>
-            <div className='flex justify-around py-4'>
-              <div>
-                <ul className='flex gap-2 w-[300px]
-                tablet:gap-10 tablet:p-10 tablet:w-auto
-                desktop:w-auto
+            <div className='flex justify-around'>
+              <div className='text-center'>
+                <h3 className='text-accent'>Explore more games on your preferred platform:</h3>
+                <ul className='flex justify-evenly gap-2
+                tablet:gap-10 tablet:p-4 tablet:w-auto
                 '>
-                  <li className='hover:scale-125'><a href=""><img src="src/assets/Icons/steam-line.png" alt="" /></a></li>
-                  <li className='hover:scale-125'><a href=""><img src="src/assets/Icons/switch-line.png" alt="" /></a></li>
-                  <li className='hover:scale-125'><a href=""><img src="src/assets/Icons/Smartphone.png" alt="" /></a></li>
-                  <li className='hover:scale-125'><a href=""><img src="src/assets/Icons/Playstation.png" alt="" /></a></li>
-                  <li className='hover:scale-125'><a href=""><img src="src/assets/Icons/windows-line.png" alt="" /></a></li>
-                  <li className='hover:scale-125'><a href=""><img src="src/assets/Icons/Mac.png" alt="" /></a></li>
+                  
+                  <li className='hover:scale-125'><a href="https://store.steampowered.com/" target="_blank"><img src="src/assets/Icons/steam-line.png" alt="" /></a></li>
+                  <li className='hover:scale-125'><a href="https://www.nintendo.com/us/store/games/nintendo-switch-games/#sort=df" target="_blank"><img src="src/assets/Icons/switch-line.png" alt="" /></a></li>
+                  <li className='hover:scale-125'><a href="https://play.google.com/store/games?device=windows&pli=1" target="_blank"><img src="src/assets/Icons/Smartphone.png" alt="" /></a></li>
+                  <li className='hover:scale-125'><a href="https://www.playstation.com/en-us/ps5/games/?smcid=pdc%3Aen-us%3Aprimary%20nav%3Amsg-games%3Aps5#out-now" target="_blank"><img src="src/assets/Icons/Playstation.png" alt="" /></a></li>
                 </ul>
               </div>
             </div>
