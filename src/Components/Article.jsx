@@ -4,6 +4,7 @@ import axios from "axios";
 
 export default function Article() {
     const [data, setGameData] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
 
     const options = {
         method: 'GET',
@@ -24,6 +25,23 @@ export default function Article() {
             setGameData(limitedData);
         });
     }, []);
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        initiateSearch();
+      };
+    
+      const initiateSearch = () => {
+        const query = searchQuery.toLowerCase();
+        setSearchQuery(query);
+        if (query == "") {
+          setGameData(originalData);
+        } else {
+          setGameData(
+            originalData.filter((data) => data.title.toLowerCase().includes(query))
+          );
+        }
+    };
 
     return (
         <>
@@ -82,10 +100,17 @@ export default function Article() {
                 ">
                     <div>
                         <div className="flex items-center relative">
-                            <form action="">
-                                <input className="border-smoke border-[0.01rem] rounded w-[300px]" type="text" placeholder="  Search" />
+                            <form onSubmit={handleSearch}>
+                                <input
+                                    type="text"
+                                    placeholder=" Search"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className=" border-smoke border-[0.01rem] rounded w-[300px]"
+                                />
+                                <button type="submit" style={{ display: "none" }}></button>
                             </form>
-                            <img className="absolute pl-[270px]" src="src/assets/Images/search-logo.png" alt="" />
+                            <img className="absolute right-2" src="src/assets/Images/search-logo.png" alt="" />
                         </div>
                         <div>
                             <div className="mt-4">
