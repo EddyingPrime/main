@@ -6,7 +6,7 @@ export default function Games() {
     const [data, setGameData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const gamesPerPage = 20;
-    const [selectedGenre, setSelectedGenre] = useState("all"); // State to store selected genre
+    const [selectedGenre, setSelectedGenre] = useState("all");
 
     const options = {
         method: 'GET',
@@ -29,23 +29,18 @@ export default function Games() {
     }, []);
 
     const filteredGames = selectedGenre === 'all' ? data : data.filter(game => game.genre === selectedGenre);
-
     const totalPages = Math.ceil(filteredGames.length / gamesPerPage);
 
     const handleNextPage = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
-        }
+        setCurrentPage(currentPage + 1);
     };
 
     const handlePrevPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-        }
+        setCurrentPage(currentPage - 1);
     };
 
     const handleFilterChange = (event) => {
-        setCurrentPage(1); // Reset page when changing filter
+        setCurrentPage(1);
         setSelectedGenre(event.target.value);
     };
 
@@ -77,16 +72,13 @@ export default function Games() {
                             </div>
                         ))}
                     </div>
-                    {/* Pagination */}
                     <div className="flex justify-center space-x-2">
-                        {currentPage > 1 && (
-                            <button onClick={handlePrevPage}>Previous</button>
-                        )}
+                        <button onClick={handlePrevPage} disabled={currentPage <= 1}>Previous</button>
                         {[...Array(totalPages).keys()].map((index) => {
-                            const pageNumber = currentPage + index;
+                            const pageNumber = index + 1;
                             return (
                                 <button
-                                    key={index + 1}
+                                    key={index}
                                     onClick={() => setCurrentPage(pageNumber)}
                                     className={`px-3 py-1 rounded focus:outline-none ${currentPage === pageNumber ? 'bg-accent text-white' : ''}`}
                                 >
@@ -94,9 +86,7 @@ export default function Games() {
                                 </button>
                             );
                         })}
-                        {currentPage < totalPages && (
-                            <button onClick={handleNextPage}>Next</button>
-                        )}
+                        <button onClick={handleNextPage} disabled={currentPage >= totalPages}>Next</button>
                     </div>
                 </div>
                 <div className="">
