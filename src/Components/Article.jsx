@@ -78,7 +78,7 @@ export default function Article() {
                 </div>
             </div>
             <section className="
-            desktop:flex desktop:justify-around">
+            desktop:flex desktop:justify-evenly">
                 <div className="flex justify-center">
                     <div>
                         <h3 className="text-lg font-Titilium mt-10 pl-2 mb-2">Featured Games</h3>
@@ -113,79 +113,85 @@ export default function Article() {
                             <img className="absolute right-2" src="src/assets/Images/search-logo.png" alt="" />
                         </div>
                         <div>
-                            <div className="mt-4">
-                                <h3 className="font-Titilium">Latest Post</h3>
-                                <div className="flex my-4 items-center gap-4">
+                            <div className="mt-4 w-[420px]">
+                                <h3 className="font-Titilium text-lg">Latest Post</h3>
+                                <div className="flex mb-4 items-center justify-between">
                                     <div>
-                                        <img className="w-[110px] h-[90px]" src="src/assets/Images/eternal.png" alt="" />
+                                        <img className="w-[120px] h-[100px] rounded" src="src/assets/Images/eclipse.jpg" alt="" />
                                     </div>
-                                    <div>
+                                    <div className="w-[280px]">
                                         <ul>
-                                            <li>Date</li>
-                                            <li>Game Name</li>
-                                            <li>Context</li>
-                                            <li>Posted By</li>
+                                            <li className="text-accent text-[12px] font-Titilium">November 5, 2023</li>
+                                            <li className="text-[16px] font-Titilium">Eclipse Horizon</li>
+                                            <li className="text-[14px]">Unveiling the Latest Gameplay Trailer and Beta Testing</li>
+                                            <li className="text-smoke text-[14px] font-Titilium">By MMOByte</li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="flex my-4 items-center gap-4">
+                                <div className="flex my-4 items-center justify-between">
                                     <div>
-                                        <img className="w-[110px] h-[90px]" src="src/assets/Images/eternal.png" alt="" />
+                                        <img className="w-[120px] h-[100px] rounded" src="src/assets/Images/bp.jpg" alt="" />
                                     </div>
-                                    <div>
+                                    <div className="w-[280px]">
                                         <ul>
-                                            <li>Date</li>
-                                            <li>Game Name</li>
-                                            <li>Context</li>
-                                            <li>Posted By</li>
+                                            <li className="text-accent text-[12px] font-Titilium">October 30, 2023</li>
+                                                <li className="text-[16px] font-Titilium">Blue Protocol</li>
+                                                <li className="text-[14px]">Exclusive Interview with Lead Game Developer - Insights and Sneak Peak</li>
+                                                <li className="text-smoke text-[14px] font-Titilium">By IGN</li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="flex my-4 items-center gap-4">
+                                <div className="flex my-4 items-center justify-between">
                                     <div>
-                                        <img className="w-[110px] h-[90px]" src="src/assets/Images/eternal.png" alt="" />
+                                        <img className="w-[120px] h-[100px] rounded" src="src/assets/Images/apex.jpg" alt="" />   
                                     </div>
-                                    <div>
+                                    <div className="w-[280px]">
                                         <ul>
-                                            <li>Date</li>
-                                            <li>Game Name</li>
-                                            <li>Context</li>
-                                            <li>Posted By</li>
+                                            <li className="text-accent text-[12px] font-Titilium">October 28, 2023</li>
+                                            <li className="text-[16px] font-Titilium">Apex Havoc: Redux</li>
+                                            <li className="text-[14px]">Gameplay Changes and Community Reactions</li>
+                                            <li className="text-smoke text-[14px] font-Titilium">By MMOBomb</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <div className="mt-4 w-[300px]">
-                                <h3 className="font-Titilium">Latest Comments</h3>
-                                <div className="flex border-b-[0.1rem] border-smoke p-2 my-4 items-center gap-4">
-                                    <img className="w-[60px] h-[60px] rounded-full" src="src/assets/Images/eternal.png" alt="" />
+                            <div className="mt-4">
+                                <h3 className="font-Titilium text-lg">Latest Comments</h3>
+                                <div className="flex items-center gap-4 border-b border-smoke p-2">
                                     <div>
+                                        <img className="w-16 h-16 rounded-full mb-2" src="src/assets/Images/eternal.png" alt="" />
+                                    </div>
+                                    <div className="w-[280px] h-20 overflow-hidden">
                                         <ul>
-                                            <li>UserName</li>
-                                            <li>Comment</li>
-                                            <li>Date</li>
+                                            <li className="font-Titilium">SapphireGamer88</li>
+                                            <li className="font-Titilium text-[12px]">"Just discovered a hidden Easter egg in my favorite game! 🎮🕹️"</li>
+                                            <li className="text-accent text-[12px]">November 2, 2023</li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="flex border-b-[0.1rem] border-smoke p-2 my-4 items-center gap-4">
-                                    <img className="w-[60px] h-[60px] rounded-full" src="src/assets/Images/eternal.png" alt="" />
+                                <div className="flex items-center gap-4 border-b border-smoke p-2">
                                     <div>
+                                        <img className="w-16 h-16 rounded-full mb-2" src="src/assets/Images/eternal.png" alt="" />
+                                    </div>
+                                    <div className="w-[280px] h-20 overflow-hidden">
                                         <ul>
-                                            <li>UserName</li>
-                                            <li>Comment</li>
-                                            <li>Date</li>
+                                            <li className="font-Titilium">QuantumQuester</li>
+                                            <li className="font-Titilium text-[12px]">"Spent the whole weekend in a gaming marathon. No regrets."</li>
+                                            <li className="text-accent text-[12px]">November 2, 2023</li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="flex border-b-[0.1rem] border-smoke p-2 my-4 items-center gap-4">
-                                    <img className="w-[60px] h-[60px] rounded-full" src="src/assets/Images/eternal.png" alt="" />
+                                <div className="flex items-center gap-4 border-b border-smoke p-2">
                                     <div>
+                                        <img className="w-16 h-16 rounded-full mb-2" src="src/assets/Images/eternal.png" alt="" />
+                                    </div>
+                                    <div className="w-[280px] h-20 overflow-hidden">
                                         <ul>
-                                            <li>UserName</li>
-                                            <li>Comment</li>
-                                            <li>Date</li>
+                                            <li className="font-Titilium">NovaPulse67</li>
+                                            <li className="font-Titilium text-[12px]">"The soundtrack of this game is pure gold! It's like the music takes you on 🎵🎮"</li>
+                                            <li className="text-accent text-[12px]">November 2, 2023</li>
                                         </ul>
                                     </div>
                                 </div>

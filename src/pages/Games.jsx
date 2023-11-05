@@ -53,7 +53,7 @@ export default function Games() {
                         <option value="all">All Genres</option>
                         <option value="Strategy">Strategy</option>
                         <option value="Shooter">Shooter</option>
-                        {/* Add other genre options here */}
+                        <option value="MMOARPG">MMOARPG</option>
                     </select>
                 </div>
                 <div className="">
