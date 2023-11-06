@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Login() {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  // const [remember, setRemember] = useState(null);
+function Register() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    // Add your login logic here
+  const handleRegister = () => {
+    // Add your registration logic here
+    console.log("Username:", username);
     console.log("Email:", email);
     console.log("Password:", password);
   };
@@ -15,10 +16,22 @@ function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-semibold mb-4">Login</h2>
+        <h2 className="text-2xl font-semibold mb-4">Register</h2>
         <form>
-          <div className="mb-4 ">
-            <label htmlFor="email" className="block">
+          <div className="mb-4">
+            <label htmlFor="username" className="block">
+              Username
+            </label>
+            <input
+              type="text"
+              id="username"
+              className="w-full border rounded px-3 py-2"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block ">
               Email
             </label>
             <input
@@ -49,9 +62,9 @@ function Login() {
             <button
               type="button"
               className="bg-accent text-white font-semibold py-2 px-4 rounded"
-              onClick={handleLogin}
+              onClick={handleRegister}
             >
-              Login
+              Register
             </button>
           </div>
         </form>
@@ -60,4 +73,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
