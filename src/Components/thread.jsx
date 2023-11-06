@@ -12,14 +12,16 @@ const Replies = () => {
 
   return (
     <>
+      <div className="container mx-auto py-2">
+        <button className="bg-accent text-white font-semibold py-2 px-4 rounded">
+          <Link to="/Forums">&#x2190;</Link>
+        </button>
+      </div>
       <form
         className="container mx-auto p-4 drop-shadow-xl"
         onSubmit={handleSubmitReply}
       >
         <label htmlFor="reply" className="text-sm font-medium ">
-          <button className="bg-accent text-white font-semibold py-2 px-4 rounded">
-            <Link to="/Forums">&#x2190;</Link>
-          </button>
           <h1 className="my-5 mx-5 font-bold">Reply to the thread</h1>
         </label>
         <textarea

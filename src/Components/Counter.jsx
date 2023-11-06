@@ -17,7 +17,7 @@ function Counter() {
   return (
     <div className={`relative ${isBumping ? "animate-bump" : ""}`}>
       <div className="button-container">
-        <button className="increment up" onClick={() => handleIncrement(1)}>
+        <button className="up increment" onClick={() => handleIncrement(1)}>
           UpVote
         </button>
         <span className="flex">{count}</span>

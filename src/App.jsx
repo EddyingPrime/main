@@ -5,7 +5,7 @@ import Blog from "./pages/Blog";
 import Forums from "./pages/Forums";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-// import ThreadPage from "./Components/Thread";
+import ThreadPage from "./Components/Thread";
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
           <Route path="/Forums" element={<Forums />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
-          {/* <Route path="/Thread/:index" element={<ThreadPage />} /> */}
+          <Route path="/Thread/:id" element={<ThreadPage />} />
         </Routes>
       </BrowserRouter>
     </>

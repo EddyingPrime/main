@@ -68,20 +68,19 @@
   text-align: center;
   opacity: 0.5;
   cursor: pointer;
+}
+.up {
+  background: green;
+  height: 50%;
+  margin-bottom: 2;
+}
+.down {
+  background: red;
+  height: 50%;
+}
 
-  &.up {
-    background: green;
-    height: 50%;
-    margin-bottom: 2;
-  }
-  &.down {
-    background: red;
-    height: 50%;
-  }
-
-  &:hover {
-    opacity: 1;
-  }
+:hover {
+  opacity: 1;
 }
 
 .button-container {
@@ -91,7 +90,6 @@
 
 .button-container button {
   padding: 5px 5px;
-  background-color: #007bff;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -105,10 +103,6 @@
 .button-container button:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-}
-
-.button-container button:hover {
-  background-color: #0056b3;
 }
 
 .button-container span {

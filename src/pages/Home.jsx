@@ -1,7 +1,7 @@
 import NavBar from "../Components/NavBar";
 import Carousel from "../Components/Carousel";
 import Article from "../Components/Article";
-// import Gallery from '../Components/Gallery';
+import Gallery from "../Components/Gallery";
 import Footer from "../Components/Footer";
 import demoVideo from "../assets/Images/demoVideo.mp4";
 
@@ -26,7 +26,7 @@ export default function Home() {
         ]}
       </Carousel>
       <Article />
-      {/* <Gallery /> */}
+      <Gallery />
       <Footer />
     </>
   );
