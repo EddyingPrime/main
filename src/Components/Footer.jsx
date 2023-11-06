@@ -67,7 +67,11 @@ export default function Footer() {
                 "
                 >
                   <li className="hover:scale-125">
-                    <a href="https://store.steampowered.com/" target="_blank">
+                    <a
+                      href="https://store.steampowered.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <img src="src/assets/Icons/steam-line.png" alt="" />
                     </a>
                   </li>
@@ -75,6 +79,7 @@ export default function Footer() {
                     <a
                       href="https://www.nintendo.com/us/store/games/nintendo-switch-games/#sort=df"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <img src="src/assets/Icons/switch-line.png" alt="" />
                     </a>
@@ -83,6 +88,7 @@ export default function Footer() {
                     <a
                       href="https://play.google.com/store/games?device=windows&pli=1"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <img src="src/assets/Icons/Smartphone.png" alt="" />
                     </a>
@@ -91,6 +97,7 @@ export default function Footer() {
                     <a
                       href="https://www.playstation.com/en-us/ps5/games/?smcid=pdc%3Aen-us%3Aprimary%20nav%3Amsg-games%3Aps5#out-now"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <img src="src/assets/Icons/Playstation.png" alt="" />
                     </a>
