@@ -75,7 +75,7 @@ const Forum = () => {
                 <li key={thread.id}>
                   <div className="bg-white p-4 border rounded m-2 flex justify-between items-center">
                     <Link
-                      to={`/thread/${thread.id}`}
+                      to={`#/${thread.id}`}
                       className="text-xl font-semibold hover:underline"
                     >
                       {thread.title}

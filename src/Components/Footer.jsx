@@ -33,7 +33,7 @@ export default function Footer() {
     <>
       <footer>
         <div
-          className="bg-image bg-cover
+          className="bg-[url('./src/assets/Images/background.jpg')] bg-cover
         desktop:flex desktop:justify-around desktop:h-[350px]
 
         "

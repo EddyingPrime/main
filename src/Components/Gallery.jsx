@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "react-feather";
+// import { useState } from "react";
+// import { ChevronLeft, ChevronRight } from "react-feather";
 
 // const Carousel = ({ items }) => {
 //   const [currentSlide, setCurrentSlide] = useState(0);
@@ -73,7 +73,7 @@ export default function Gallery() {
   return (
     <>
       <div
-        className="w-full bg-parallax bg-cover bg-fixed bg-no-repeat h-40 mt-8
+        className="w-full bg-[url('./src/assets/Images/parallax.jpg')] bg-fixed bg-no-repeat h-40 mt-8
                 flex items-center justify-center
                 text-[22px] font-Ops text-accent text-shadow
                 tablet:text-[40px]
