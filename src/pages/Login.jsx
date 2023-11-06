@@ -42,13 +42,13 @@ function Login() {
             />
           </div>
 
-          <div className="flex space-x-40">
+          <div className="flex space-x-48">
             <button className="bg-accent text-white font-semibold py-1 px-2 rounded">
               <Link to="/">Back</Link>
             </button>
             <button
               type="button"
-              className="bg-accent text-white font-semibold py-2 px-4 rounded"
+              className="bg-accent text-white font-semibold py-2 px-5 rounded"
               onClick={handleLogin}
             >
               Login
